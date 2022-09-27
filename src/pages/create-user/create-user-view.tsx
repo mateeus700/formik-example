@@ -1,6 +1,7 @@
 import { Field, FieldArray, Form, useFormikContext } from "formik";
 import React from "react";
 import { Input } from "../../components/input/input";
+import { Toggle } from "../../components/toogle/toogle";
 import { UserFormValues } from "./create-user.types";
 
 export const CreateUserView: React.FC<{}> = () => {
@@ -10,15 +11,15 @@ export const CreateUserView: React.FC<{}> = () => {
     <>
       <Form>
         <Field
+          id="hasSun"
+          name="hasSun"
+          placeholder="Has Sun"
+          component={Toggle}
+        />
+        <Field
           id="firstName"
           name="firstName"
           placeholder="First Name"
-          component={Input}
-        />
-        <Field
-          id="lastName"
-          name="lastName"
-          placeholder="Last Name"
           component={Input}
         />
         <Field

@@ -7,13 +7,13 @@ import { UserFormValues } from "./create-user.types";
 export const CreateUser: React.FC<{}> = () => {
   const initialValues: UserFormValues = {
     firstName: "",
-    lastName: "",
     age: 0,
     parents: {
       fatherName: "",
       motherName: "",
     },
     brothers: [],
+    hasSun: false,
   };
 
   const UserValidationSchema = Yup.object().shape({
@@ -21,13 +21,7 @@ export const CreateUser: React.FC<{}> = () => {
       .min(2, "O nome é muito curto")
       .max(50, "O nome é muito grande")
       .required("O campo é obrigatorio"),
-    lastName: Yup.string()
-      .min(2, "O nome é muito curto")
-      .max(50, "O nome é muito grande")
-      .required("O campo é obrigatorio"),
   });
-
-  console.log("Renderizei");
 
   return (
     <div>
@@ -42,11 +36,6 @@ export const CreateUser: React.FC<{}> = () => {
           actions.setSubmitting(false);
         }}
       >
-        {/* <Form>
-          <label htmlFor="firstName">First Name</label>
-          <Field id="firstName" name="firstName" placeholder="First Name" />
-          <button type="submit">Submit</button>
-        </Form> */}
         <CreateUserView />
       </Formik>
     </div>

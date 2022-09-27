@@ -10,8 +10,8 @@ interface Parents {
 
 export interface UserFormValues {
   firstName: string;
-  lastName: string;
   age: number;
   parents: Parents;
   brothers: Array<Name>;
+  hasSun: boolean;
 }
